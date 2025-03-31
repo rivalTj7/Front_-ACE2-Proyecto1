@@ -1,0 +1,528 @@
+{
+	"info": {
+		"_postman_id": "e2cd2b5d-bbc9-4d6a-86f4-40e0763efc93",
+		"name": "ARQUI-Hospital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13437755"
+	},
+	"item": [
+		{
+			"name": "hello_world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "hello_world",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/",
+							"path": [
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\":\"Hola Mundo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "rol",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/rol",
+					"path": [
+						"rol"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "rol",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/rol",
+							"path": [
+								"rol"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n\t\"ID_USUARIO\": 1,\n\t\"NOMBRE\": \"Juan Perez\",\n\t\"ROL\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "rol",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ID_USUARIO\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "rol",
+					"host": [
+						"rol"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "rol",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ID_USUARIO\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "/rol",
+							"path": [
+								"rol"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\":\"Se actualizo con exito\"\n}"
+				}
+			]
+		},
+		{
+			"name": "pacientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/pacientes",
+					"path": [
+						"pacientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "pacientes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/pacientes",
+							"path": [
+								"pacientes"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\n\t{\n\t\t\"NOMBRE COMPLETO\": \"Maria Lopez\",\n\t\t\"CUI\": \"1234567890101\",\n\t\t\"EDAD\": 30,\n\t\t\"TELEFONO\": \"555-1234\",\n\t\t\"FOTOGRAFIA\": \"url_foto\",\n\t\t\"SEXO\": \"F\",\n\t\t\"EXPEDIENTE\": 12345,\n\t\t\"TIPO SANGRE\": \"O+\",\n\t\t\"FECHA INGRESO\": \"2023-01-01\",\n\t\t\"ALTA\": false,\n\t\t\"FECHA_ULTIMA\": \"2023-01-15\",\n\t\t\"NOMBRE_DOCTOR\": \"Dr. Smith\"\n\t}\n]"
+				}
+			]
+		},
+		{
+			"name": "editar_paciente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"NOMBRE COMPLETO\": \"Maria Lopez\",\n\t\"CUI\": \"1234567890101\",\n\t\"EDAD\": 31,\n\t\"TELEFONO\": \"555-5678\",\n\t\"FOTOGRAFIA\": \"url_foto_actualizada\",\n\t\"SEXO\": \"F\",\n\t\"EXPEDIENTE\": 12345,\n\t\"TIPO SANGRE\": \"O+\",\n\t\"FECHA INGRESO\": \"2023-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/editar_paciente",
+					"path": [
+						"editar_paciente"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "editar_paciente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"NOMBRE COMPLETO\": \"Maria Lopez\",\n\t\"CUI\": \"1234567890101\",\n\t\"EDAD\": 31,\n\t\"TELEFONO\": \"555-5678\",\n\t\"FOTOGRAFIA\": \"url_foto_actualizada\",\n\t\"SEXO\": \"F\",\n\t\"EXPEDIENTE\": 12345,\n\t\"TIPO SANGRE\": \"O+\",\n\t\"FECHA INGRESO\": \"2023-01-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\":\"Actualizado con exito\"\n}"
+				}
+			]
+		},
+		{
+			"name": "alta_paciente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ID_DIAGNOSTICO\": 1234,\n\t\"TIEMPO_FINAL\": \"2023-01-07 08:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/alta_paciente",
+					"path": [
+						"alta_paciente"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "alta_paciente",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ID_DIAGNOSTICO\": 1,\n\t\"TIEMPO_FINAL\": \"2023-01-07 08:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "/alta_paciente",
+							"path": [
+								"alta_paciente"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n\t\"Maximo\": 120,\n\t\"Minimo\": 80,\n\t\"Promedio\": 100\n}"
+				}
+			]
+		},
+		{
+			"name": "alta_paciente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/alta_paciente?cui_paciente=2991163360101",
+					"path": [
+						"alta_paciente"
+					],
+					"query": [
+						{
+							"key": "cui_paciente",
+							"value": "2991163360101"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "alta_paciente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "/alta_paciente?cui_paciente=2991163360101",
+							"path": [
+								"alta_paciente"
+							],
+							"query": [
+								{
+									"key": "cui_paciente",
+									"value": "2991163360101"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n\t\"Maximo\": 120,\n\t\"Minimo\": 80,\n\t\"Promedio\": 100\n}"
+				}
+			]
+		},
+		{
+			"name": "diagnostico",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "cui",
+						"value": "2991163360101",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "/diagnostico?cui=2991163360101",
+					"path": [
+						"diagnostico"
+					],
+					"query": [
+						{
+							"key": "cui",
+							"value": "2991163360101"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "diagnostico",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/diagnostico?cui=2991163360101",
+							"path": [
+								"diagnostico"
+							],
+							"query": [
+								{
+									"key": "cui",
+									"value": "2991163360101"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\n\t{\n\t\t\"ID\": 1,\n\t\t\"CUI_PACIENTE\": \"1234567890101\",\n\t\t\"DIAGNOSTICO_PRINCIPAL\": \"Gripe\",\n\t\t\"SINTOMAS\": \"Fiebre, tos, dolor de cabeza\",\n\t\t\"ANTECEDENTES\": \"Ninguno\",\n\t\t\"CONDICIONES\": \"Ninguna\",\n\t\t\"ALERGIAS\": \"Ninguna\",\n\t\t\"PLAN_TRATAMIENTO\": \"Reposo y paracetamol\"\n\t}\n]"
+				}
+			]
+		},
+		{
+			"name": "diagnostico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"CUI_PACIENTE\": \"1234567890101\",\n\t\"DIAGNOSTICO_PRINCIPAL\": \"Gripe\",\n\t\"SINTOMAS\": \"Fiebre, tos, dolor de cabeza\",\n\t\"ANTECEDENTES\": \"Ninguno\",\n\t\"CONDICIONES\": \"Ninguna\",\n\t\"ALERGIAS\": \"Ninguna\",\n\t\"PLAN_TRATAMIENTO\": \"Reposo y paracetamol\",\n\t\"TIEMPO_INICIAL\": \"2023-01-01T08:00:00Z\",\n\t\"TIEMPO_FINAL\": \"2023-01-07T08:00:00Z\",\n\t\"ARCHIVO\": \"url_archivo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/diagnostico",
+					"path": [
+						"diagnostico"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "diagnostico",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"CUI_PACIENTE\": \"1234567890101\",\n\t\"DIAGNOSTICO_PRINCIPAL\": \"Gripe\",\n\t\"SINTOMAS\": \"Fiebre, tos, dolor de cabeza\",\n\t\"ANTECEDENTES\": \"Ninguno\",\n\t\"CONDICIONES\": \"Ninguna\",\n\t\"ALERGIAS\": \"Ninguna\",\n\t\"PLAN_TRATAMIENTO\": \"Reposo y paracetamol\",\n\t\"TIEMPO_INICIAL\": \"2023-01-01T08:00:00Z\",\n\t\"TIEMPO_FINAL\": \"2023-01-07T08:00:00Z\",\n\t\"ARCHIVO\": \"url_archivo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "/diagnostico",
+							"path": [
+								"diagnostico"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\":\"diagsnotico registrado con exito\"\n}"
+				}
+			]
+		},
+		{
+			"name": "diagnostico",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ID\": 1,\n\t\"CUI_PACIENTE\": \"1234567890101\",\n\t\"DIAGNOSTICO_PRINCIPAL\": \"Gripe\",\n\t\"SINTOMAS\": \"Fiebre, tos, dolor de cabeza\",\n\t\"ANTECEDENTES\": \"Ninguno\",\n\t\"CONDICIONES\": \"Ninguna\",\n\t\"ALERGIAS\": \"Ninguna\",\n\t\"PLAN_TRATAMIENTO\": \"Reposo y paracetamol\",\n\t\"TIEMPO_INICIAL\": \"2023-01-01T08:00:00Z\",\n\t\"TIEMPO_FINAL\": \"2023-01-07T08:00:00Z\",\n\t\"ARCHIVO\": \"url_archivo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/diagnostico",
+					"path": [
+						"diagnostico"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "diagnostico",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ID\": 1,\n\t\"CUI_PACIENTE\": \"1234567890101\",\n\t\"DIAGNOSTICO_PRINCIPAL\": \"Gripe\",\n\t\"SINTOMAS\": \"Fiebre, tos, dolor de cabeza\",\n\t\"ANTECEDENTES\": \"Ninguno\",\n\t\"CONDICIONES\": \"Ninguna\",\n\t\"ALERGIAS\": \"Ninguna\",\n\t\"PLAN_TRATAMIENTO\": \"Reposo y paracetamol\",\n\t\"TIEMPO_INICIAL\": \"2023-01-01T08:00:00Z\",\n\t\"TIEMPO_FINAL\": \"2023-01-07T08:00:00Z\",\n\t\"ARCHIVO\": \"url_archivo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "/diagnostico",
+							"path": [
+								"diagnostico"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\":\"Diagnostico actualizado con exito\"\n}"
+				}
+			]
+		}
+	]
+}
